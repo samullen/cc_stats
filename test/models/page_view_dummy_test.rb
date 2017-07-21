@@ -7,7 +7,7 @@ describe PageViewDummy do
       dummy.id.must_be_instance_of Integer
       dummy.url.must_be_instance_of String
       dummy.referrer.must_be_instance_of String
-      dummy.created_at.must_be_instance_of Time
+      dummy.created_at.must_be_instance_of String
     end
 
     it "creates a new instance with specific values given a seed" do
@@ -15,7 +15,7 @@ describe PageViewDummy do
       dummy.id.must_equal 1
       dummy.url.must_equal "https://apple.com"
       dummy.referrer.must_equal "https://apple.com"
-      dummy.created_at.must_be_instance_of Time
+      dummy.created_at.must_be_instance_of String
     end
   end
 

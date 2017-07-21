@@ -5,7 +5,7 @@ class PageViewDummy
     @id = id || rand(150)
     @url = urls[@id % urls.size]
     @referrer = referrers[@id % referrers.size]
-    @created_at = Time.now
+    @created_at = rand(30).days.ago.to_s(:db)
   end
 
   def hash
@@ -15,6 +15,10 @@ class PageViewDummy
       referrer: self.referrer, 
       created_at: self.created_at
     }.compact.to_s)
+  end
+
+  def to_s
+    "(#{self.id}, '#{self.url}', '#{self.referrer}', '#{self.hash}', '#{self.created_at}')"
   end
 
   private
