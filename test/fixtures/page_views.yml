@@ -1,11 +1,75 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
-
-# This model initially had no columns defined. If you add columns to the
-# model remove the '{}' from the fixture names and add the columns immediately
-# below each fixture, per the syntax in the comments below
-#
-one: {}
-# column: value
-#
-two: {}
-# column: value
+apple_google_1_dayold:
+  url: "http://apple.com"
+  referrer: "http://google.com"
+  hash: "arndomecharacters"
+  created_at: <%= 1.days.ago %>
+apple_google_2_dayold:
+  url: "http://apple.com"
+  referrer: "http://google.com"
+  hash: "arndomecharacters"
+  created_at: <%= 2.days.ago %>
+apple_google_3_dayold:
+  url: "http://apple.com"
+  referrer: "http://google.com"
+  hash: "arndomecharacters"
+  created_at: <%= 3.days.ago %>
+apple_google_4_dayold:
+  url: "http://apple.com"
+  referrer: "http://google.com"
+  hash: "arndomecharacters"
+  created_at: <%= 4.days.ago %>
+apple_google_5_dayold:
+  url: "http://apple.com"
+  referrer: "http://google.com"
+  hash: "arndomecharacters"
+  created_at: <%= 5.days.ago %>
+apple_amazon_1_dayold:
+  url: "http://apple.com"
+  referrer: "http://amazon.com"
+  hash: "arndomecharacters"
+  created_at: <%= 1.days.ago %>
+apple_amazon_2_dayold:
+  url: "http://apple.com"
+  referrer: "http://amazon.com"
+  hash: "arndomecharacters"
+  created_at: <%= 2.days.ago %>
+apple_amazon_3_dayold:
+  url: "http://apple.com"
+  referrer: "http://amazon.com"
+  hash: "arndomecharacters"
+  created_at: <%= 3.days.ago %>
+apple_amazon_4_dayold:
+  url: "http://apple.com"
+  referrer: "http://amazon.com"
+  hash: "arndomecharacters"
+  created_at: <%= 4.days.ago %>
+apple_amazon_5_dayold:
+  url: "http://apple.com"
+  referrer: "http://amazon.com"
+  hash: "arndomecharacters"
+  created_at: <%= 5.days.ago %>
+google_apple_1_dayold:
+  url: "http://google.com"
+  referrer: "http://apple.com"
+  hash: "arndomecharacters"
+  created_at: <%= 1.days.ago %>
+google_apple_2_dayold:
+  url: "http://google.com"
+  referrer: "http://apple.com"
+  hash: "arndomecharacters"
+  created_at: <%= 2.days.ago %>
+google_apple_3_dayold:
+  url: "http://google.com"
+  referrer: "http://apple.com"
+  hash: "arndomecharacters"
+  created_at: <%= 3.days.ago %>
+google_apple_4_dayold:
+  url: "http://google.com"
+  referrer: "http://apple.com"
+  hash: "arndomecharacters"
+  created_at: <%= 4.days.ago %>
+google_apple_5_dayold:
+  url: "http://google.com"
+  referrer: "http://apple.com"
+  hash: "arndomecharacters"
+  created_at: <%= 5.days.ago %>
