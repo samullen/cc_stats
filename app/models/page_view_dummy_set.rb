@@ -1,47 +1,87 @@
-class PageViewDummy
-  attr_reader :id, :url, :referrer, :created_at
+class PageViewDummySet
+  attr_reader :ending_id, :required_urls, :required_referrers
+  attr_accessor :current_id
 
-  def initialize(id=nil)
-    @id = id || rand(150)
-    @url = urls[@id % urls.size]
-    @referrer = referrers[@id % referrers.size]
-    @created_at = rand(30).days.ago.to_s(:db)
-  end
-
-  def hash
-    @hash ||= Digest::MD5.hexdigest({
-      id: self.id, 
-      url: self.url, 
-      referrer: self.referrer, 
-      created_at: self.created_at
-    }.compact.to_s)
-  end
-
-  def to_s
-    "(#{self.id}, '#{self.url}', '#{self.referrer}', '#{self.hash}', '#{self.created_at}')"
-  end
-
-  private
-
-  def urls
-    @urls ||= [
+  def initialize(starting_id=1, count=1000)
+    @current_id = starting_id
+    @ending_id = starting_id + count - 1
+    @required_urls = [
       "http://apple.com",
       "https://apple.com",
       "https://www.apple.com",
       "http://developer.apple.com",
       "http://en.wikipedia.org",
       "http://opensource.org"
-    ] + generic_urls
-  end
-
-  def referrers
-    @referrers ||= [
+    ]
+    @required_referrers = [
       "http://apple.com",
       "https://apple.com",
       "https://www.apple.com",
       "http://developer.apple.com",
       nil
-    ] + generic_urls
+    ]
+  end
+
+  def sql
+    "INSERT INTO page_views VALUES #{records.join(", ")}"
+  end
+
+  def records
+    [required_url_records, required_referrer_records, random_records].flatten
+  end
+
+  def required_url_records
+    @required_url_records ||= self.required_urls.
+      map.with_index(self.current_id) {|url,i|
+        self.current_id += 1
+        record_for(i, url, random_referrer, random_timestamp.to_s(:db))
+      }
+  end
+
+  def required_referrer_records
+    @required_referrer_records ||= self.required_referrers.
+      map.with_index(self.current_id) {|referrer,i|
+        self.current_id += 1
+        record_for(i, random_url, referrer, random_timestamp.to_s(:db))
+      }
+  end
+
+  def random_records
+    @random_records ||= (self.current_id..self.ending_id).map {|id|
+      record_for(id, random_url, random_referrer, random_timestamp.to_s(:db))
+    }
+  end
+
+  def urls
+    @urls ||= required_urls + generic_urls
+  end
+
+  def referrers
+    @referrers ||= required_referrers + [nil] * 9 + generic_urls
+  end
+
+  private
+
+  def record_for(id, url, referrer, timestamp)
+    record_hash = {id: id, url: url, referrer: referrer, created_at: timestamp }
+    quoted_referrer = referrer ? "'#{referrer}'" : "null"
+    "(#{id}, '#{url}', #{quoted_referrer}, '#{hash(record_hash)}', '#{timestamp}')"
+  end
+
+  def random_url
+    self.urls[rand(self.urls.size)]
+  end
+
+  def random_referrer
+    self.referrers[rand(self.referrers.size)]
+  end
+
+  def random_timestamp
+    rand(30).days.ago
+  end
+
+  def hash(record_hash)
+    Digest::MD5.hexdigest(record_hash.compact.to_s)
   end
 
   def generic_urls
