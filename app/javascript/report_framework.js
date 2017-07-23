@@ -30,10 +30,10 @@ class ReportFramework extends React.Component {
     return (
       <div>
         <ul className="nav nav-tabs">
-          <li role="presentation" className="active">
+          <li role="presentation" className={this.state.report === 'top_pageviews' && 'active'}>
             <a href="#" onClick={() => this.handleTabClick("top_pageviews")}>Top PageViews</a>
           </li>
-          <li role="presentation">
+          <li role="presentation" className={this.state.report === 'top_referrers' && 'active'}>
             <a href="#" onClick={() => this.handleTabClick("top_referrers")}>Top Referrers</a>
           </li>
         </ul>

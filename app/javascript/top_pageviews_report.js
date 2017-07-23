@@ -45,7 +45,7 @@ class TopPageViewsReport extends React.Component {
 
       rows.push(this.state.data[date].map((pageview, i) => {
         return (
-          <tr key={`${date}=${i}`}>
+          <tr key={`${date}-${i}`}>
             <td>{pageview.url}</td>
             <td>{pageview.visits}</td>
           </tr>
