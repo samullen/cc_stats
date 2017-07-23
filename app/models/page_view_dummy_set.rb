@@ -107,18 +107,18 @@ class PageViewDummySet
       "http://lid.com", "http://juice.com", "http://moniter.com",
       "http://captain.com", "http://bonding.com", "http://loudly.com",
       "http://thudding.com", "http://guitar.com", "http://shaving.com",
-      "http://hair.com", "http://soccer.com", "http://water.com",
-      "http://racket.com", "http://table.com", "http://late.com",
-      "http://media.com", "http://desktop.com", "http://flipper.com",
-      "http://club.com", "http://flying.com", "http://smooth.com",
-      "http://monster.com", "http://purple.com", "http://guardian.com",
-      "http://bold.com", "http://hyperlink.com", "http://presentation.com",
-      "http://world.com", "http://national.com", "http://comment.com",
-      "http://element.com", "http://magic.com", "http://lion.com",
-      "http://sand.com", "http://crust.com", "http://toast.com",
-      "http://jam.com", "http://hunter.com", "http://forest.com",
-      "http://foraging.com", "http://silently.com", "http://tawesomated.com",
-      "http://joshing.com", "http://pong.com"
+      "http://hair.com", "http://soccer.com", "http://racket.com",
+      "http://table.com", "http://late.com", "http://media.com",
+      "http://desktop.com", "http://flipper.com", "http://club.com",
+      "http://flying.com", "http://smooth.com", "http://monster.com",
+      "http://purple.com", "http://guardian.com", "http://bold.com",
+      "http://hyperlink.com", "http://presentation.com", "http://world.com",
+      "http://national.com", "http://comment.com", "http://element.com",
+      "http://magic.com", "http://lion.com", "http://sand.com",
+      "http://crust.com", "http://toast.com", "http://jam.com",
+      "http://hunter.com", "http://forest.com", "http://foraging.com",
+      "http://silently.com", "http://tawesomated.com", "http://joshing.com",
+      "http://pong.com"
     ]
   end
 end
