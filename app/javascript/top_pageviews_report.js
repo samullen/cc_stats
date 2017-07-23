@@ -41,7 +41,11 @@ class TopPageViewsReport extends React.Component {
     let row = 1
 
     for (let date in this.state.data) {
-      rows.push(<tr key={date}><td colSpan='2'>{date}</td></tr>)
+      rows.push(
+        <tr key={date} className="warning">
+          <th colSpan='2' className="text-center"><h3>{date}</h3></th>
+        </tr>
+      )
 
       rows.push(this.state.data[date].map((pageview, i) => {
         return (
@@ -66,8 +70,8 @@ class TopPageViewsReport extends React.Component {
   render() {
     let somethign
     return (
-      <div>
-        <h1>Top PageViews</h1>
+      <div className="col-md-12">
+        <h3>Top PageViews</h3>
         { this.pageViewTable() }
       </div>
     )

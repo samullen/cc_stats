@@ -29,14 +29,16 @@ class ReportFramework extends React.Component {
       
     return (
       <div>
-        <ul className="nav nav-tabs">
-          <li role="presentation" className={this.state.report === 'top_pageviews' && 'active'}>
-            <a href="#" onClick={() => this.handleTabClick("top_pageviews")}>Top PageViews</a>
-          </li>
-          <li role="presentation" className={this.state.report === 'top_referrers' && 'active'}>
-            <a href="#" onClick={() => this.handleTabClick("top_referrers")}>Top Referrers</a>
-          </li>
-        </ul>
+        <div className="col-md-12">
+          <ul className="nav nav-tabs">
+            <li role="presentation" className={this.state.report === 'top_pageviews' && 'active'}>
+              <a href="#" onClick={() => this.handleTabClick("top_pageviews")}>Top PageViews</a>
+            </li>
+            <li role="presentation" className={this.state.report === 'top_referrers' && 'active'}>
+              <a href="#" onClick={() => this.handleTabClick("top_referrers")}>Top Referrers</a>
+            </li>
+          </ul>
+        </div>
 
         {report}
       </div>

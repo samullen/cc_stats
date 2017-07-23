@@ -6,18 +6,7 @@ class TopReferrersReport extends React.Component {
     super()
 
     this.state = {
-      data: { 
-        '2012-01-01' : {
-          'http://redacted.com': {
-            'visits': 100,
-            'referrers': [ 
-              { 'url': 'http://store.redacted.com/us', 'visits': 10 },
-              { 'url': 'http://store.redacted.com/us', 'visits': 10 },
-              { 'url': 'http://store.redacted.com/us', 'visits': 10 } 
-            ]
-          }
-        }
-      }
+      data: { }
     };
 
     this.referrerTable = this.referrerTable.bind(this)
@@ -52,13 +41,17 @@ class TopReferrersReport extends React.Component {
     let row = 1
 
     for (let date in this.state.data) {
-      rows.push(<tr key={date}><th colSpan='2'>{date}</th></tr>)
+      rows.push(
+        <tr key={date} className="warning">
+          <th colSpan='2' className="text-center"><h3>{date}</h3></th>
+        </tr>
+      )
 
       for (let url in this.state.data[date]) {
         let urlObject = this.state.data[date][url]
         
         rows.push(
-          <tr key={`${date}-${url}`}>
+          <tr key={`${date}-${url}`} className="info">
             <td>{url}</td>
             <td>{urlObject.visits}</td>
           </tr>
@@ -87,8 +80,8 @@ class TopReferrersReport extends React.Component {
 
   render() {
     return (
-      <div>
-        <h1>Top Referrers</h1>
+      <div className="col-md-12">
+        <h3>Top Referrers</h3>
         { this.referrerTable() }
       </div>
     )
