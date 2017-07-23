@@ -15,8 +15,6 @@ class ReportFramework extends React.Component {
   }
 
   handleTabClick(report) {
-    console.log(report)
-
     this.setState({report: report})
   }
 
@@ -24,9 +22,9 @@ class ReportFramework extends React.Component {
     let report
 
     if (this.state.report === "top_referrers") {
-      report = <div>top referrers report</div>
+      report = <TopReferrersReport />
     } else {
-      report = <div>top pageviews report</div>
+      report = <TopPageViewsReport />
     }
       
     return (
