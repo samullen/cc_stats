@@ -105,7 +105,9 @@ order to retrieve the number of page views per URL, grouped by day, for the past
 
 Example request:
 
-	`[GET] /top_urls`
+```
+[GET] /top_urls
+```
 
 Payload
 
@@ -120,7 +122,9 @@ URLs grouped by day, for the past 5 days, via a REST endpoint.
 
 Example request:
 
-	`[GET] /top_referrers`
+```
+[GET] /top_referrers
+```
 
 Payload
 

@@ -5,7 +5,7 @@ class PageView < Sequel::Model
         FROM page_views 
        WHERE created_at > ?
        GROUP BY created_at::date, url
-       ORDER BY created_at desc
+       ORDER BY created_at desc, visits desc
     SQL
     self.db[sql, date].all.group_by {|pv| pv[:created_at].to_s(:db)}
   end
