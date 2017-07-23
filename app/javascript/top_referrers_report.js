@@ -60,7 +60,7 @@ class TopReferrersReport extends React.Component {
         rows.push(urlObject.referrers.map((referrer, i) => {
           return (
             <tr key={`${date}-${url}-${i}`}>
-              <td>{referrer.url}</td>
+              <td>- {referrer.url}</td>
               <td>{referrer.visits}</td>
             </tr>
           )
