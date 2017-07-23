@@ -17,6 +17,8 @@ gem 'uglifier', '>= 1.3.0'
 # See https://github.com/rails/execjs#readme for more supported runtimes
 # gem 'therubyracer', platforms: :ruby
 
+gem "webpacker", "~> 2.0"
+
 gem "sequel-rails", "~> 0.9"
 gem "pg", "~> 0.21"
 
