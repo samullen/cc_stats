@@ -108,7 +108,10 @@ Example request:
 	`[GET] /top_urls`
 
 Payload
-> { '2012-01-01' : [ { 'url': 'http://redacted.com', 'visits': 100 } ] }
+
+```
+{ '2012-01-01' : [ { 'url': 'http://redacted.com', 'visits': 100 } ] }
+```
 
 ### Report #2
 
@@ -120,15 +123,18 @@ Example request:
 	`[GET] /top_referrers`
 
 Payload
-> {
->	'2012-01-01' : [
->		{
->			'url': 'http://redacted.com',
->			'visits': 100,
->			'referrers': [ { 'url': 'http://store.redacted.com/us', 'visits': 10 } ]
->		}
->	]
->}
+
+```
+{
+  '2012-01-01' : [
+    {
+      'url': 'http://redacted.com',
+        'visits': 100,
+        'referrers': [ { 'url': 'http://store.redacted.com/us', 'visits': 10 } ]
+    }
+  ]
+}
+```
 
 ## One more thing
 
