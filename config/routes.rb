@@ -3,6 +3,7 @@ Rails.application.routes.draw do
   namespace :api do
     resources :page_views do
       get :daily_top_urls, on: :collection
+      get :daily_top_referrers, on: :collection
     end
   end
 end

@@ -4,4 +4,10 @@ class API::PageViewsController < ApplicationController
 
     render json: results.to_json, status: 200
   end
+
+  def daily_top_referrers
+    results = PageView.daily_top_referrers_since(5.days.ago.to_date)
+
+    render json: results.to_json, status: 200
+  end
 end
